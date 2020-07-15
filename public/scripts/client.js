@@ -66,6 +66,7 @@ $(document).ready(function() {
           </div>
         </footer>
       </article>
+      <br>
         `;
 
     return $tweet;
@@ -78,6 +79,7 @@ $(document).ready(function() {
     for (tweetObj of tweets) {
       let $createdTweet = createTweetElement(tweetObj);
       console.log($createdTweet);
+      //.posted-tweet is the class of the element that will contain these article elements 
       $('.posted-tweet').append($createdTweet);
     }
 
