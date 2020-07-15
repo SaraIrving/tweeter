@@ -51,7 +51,7 @@ $(document).ready(function() {
       <article class="tweet-article">
         <header class="tweet-header">
           <div class="display-info">
-            <img class="small-avatar" src="/${tweetData["user"].avatars}"> 
+            <img class="small-avatar" src="${tweetData["user"].avatars}"> 
             <p>${tweetData["user"].name}</p>
           </div>
           <p class="hidden-handle">${tweetData["user"].handle}</p>
@@ -68,7 +68,6 @@ $(document).ready(function() {
       </article>
       <br>
         `;
-
     return $tweet;
   }
 
