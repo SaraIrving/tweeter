@@ -123,6 +123,9 @@ $(document).ready(function() {
         method: "POST" ,
         data: $(this).serialize(),
       })
+      .then ((res) => {
+        console.log("Success")
+      })
       
   })
     
