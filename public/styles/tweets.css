@@ -5,15 +5,17 @@
   display: flex;
 }
 
-#hidden-handle {
+.hidden-handle {
   display: none;
+}
+
+.posted-tweet:hover .hidden-handle {
+  display: flex;
+  color: black;
 }
 
 .posted-tweet:hover {
   box-shadow: 4px 4px lightslategray;
-  display: flex;
-  color: black;
-
 }
 
 .text {
@@ -36,7 +38,6 @@
   align-items: center;
   width: 100%;
   height: 70px;
-  
 }
 
 .display-info {
@@ -51,8 +52,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 50px
-
+  height: 50px;
 }
 
 .small-avatar {
@@ -60,3 +60,7 @@
   width: 40px;
 }
 
+.icons {
+  display: flex;
+  justify-content: space-between;
+}
