@@ -77,12 +77,56 @@ $(document).ready(function() {
     // takes return value and appends it to the tweets container
     for (tweetObj of tweets) {
       let $createdTweet = createTweetElement(tweetObj);
-      console.log($createdTweet);
+      // console.log($createdTweet);
       //.posted-tweet is the class of the element that will contain these article elements 
       $('.posted-tweet').append($createdTweet);
     }
-
   }
+
+
+  //ajax accepts an url as an argument 
+  //ajax accepts an object with key:value pairs that configure the ajax request
+  //what url do we give to ajax?
+  //how to use .sterilize?? want to turn the form data into a query string
+  //send the query string in the data field of the ajax request 
+
+  // Click action; when action get data.
+  // First step user action: click!
+  // $('#submit_tweet').click(function(e){
+
+  //   // Prevent redirect
+  //   e.preventDefault();
+
+  //   // Capture data e.g. $('tweet-form')
+  //   // serialize data
+  //   const data = $('.tweet-form').serialize()
+    
+  //   // Pass data async to url => tweets
+  //   $.ajax({
+  //     async: true,
+  //     url: '/tweets',
+  //     type: "POST" ,
+  //     data
+  //   })
+    
+  // })
+
+
+  
+  $('#tweet-form').submit(function(event){
+      event.preventDefault();
+      // Prevent redirect
+      
+      // Pass data async to url => tweets
+      $.ajax({
+        url: '/tweets',
+        method: "POST" ,
+        data: $(this).serialize(),
+      })
+      
+  })
+    
+
 
 
 
@@ -91,7 +135,7 @@ $(document).ready(function() {
   const $tweet = createTweetElement(tweetData);
 
 // Test / driver code (temporary)
-  console.log($tweet); // to see what it looks like
+  // console.log($tweet); // to see what it looks like
 
   $('.posted-tweet').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 
