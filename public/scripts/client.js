@@ -4,44 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Test / driver code (temporary). Eventually will get this from the server.
 
-// const tweetData = {
-//   "user": {
-//     "name": "Newton",
-//     "avatars": "https://i.imgur.com/73hZDYK.png",
-//       "handle": "@SirIsaac"
-//     },
-//   "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//   "created_at": 1461116232227
-// }
-
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd" },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ]
 
 $(document).ready(function() {
   //This function evaluates the text inputted by the user and re-encodes the text so that any unsafe characters are converted into a safe 'encoded' representation
@@ -73,7 +36,6 @@ $(document).ready(function() {
           </div>
         </footer>
       </article>
-      <br>
         `;
 
        
@@ -92,35 +54,6 @@ $(document).ready(function() {
       $('.posted-tweet').prepend($createdTweet);
     }
   }
-
-
-  //ajax accepts an url as an argument 
-  //ajax accepts an object with key:value pairs that configure the ajax request
-  //what url do we give to ajax?
-  //how to use .sterilize?? want to turn the form data into a query string
-  //send the query string in the data field of the ajax request 
-
-  // Click action; when action get data.
-  // First step user action: click!
-  // $('#submit_tweet').click(function(e){
-
-  //   // Prevent redirect
-  //   e.preventDefault();
-
-  //   // Capture data e.g. $('tweet-form')
-  //   // serialize data
-  //   const data = $('.tweet-form').serialize()
-    
-  //   // Pass data async to url => tweets
-  //   $.ajax({
-  //     async: true,
-  //     url: '/tweets',
-  //     type: "POST" ,
-  //     data
-  //   })
-    
-  // })
-
 
   
   $('#tweet-form').submit(function(event){
@@ -165,19 +98,6 @@ $(document).ready(function() {
     $('#tweet-text').val('');
     $('.counter').val(140);
   }
-
-
-
-//const $tweet = $(`<article class="tweet">Hello world</article>`);
-
-  //const $tweet = createTweetElement(tweetData);
-
-// Test / driver code (temporary)
-  // console.log($tweet); // to see what it looks like
-
-  //$('.posted-tweet').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-
-  //renderTweets(data);
 
 
 });
