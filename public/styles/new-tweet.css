@@ -24,6 +24,23 @@ textarea {
   background-color: transparent;
   border: none;
   border-bottom: 3px solid black;
-  width: 100%
+  width: 100%;
 }
 
+.over-alert {
+  display: none;
+  border: 2px solid red;
+  padding: 15px;
+  color: red;
+  font-weight: bold;
+
+}
+
+.empty-alert {
+  display: none;
+  border: 2px solid red;
+  padding: 15px;
+  color: red;
+  font-weight: bold;
+
+}
