@@ -126,16 +126,17 @@ $(document).ready(function() {
   $('#tweet-form').submit(function(event){
     event.preventDefault();
     // Prevent redirect
-    
-    if($('#tweet-text').val().length <= 0) { 
-      alert("Tweet is empty!");
-     } else if ($('#tweet-text').val().length > 140) {
-       alert("Tweet is too long!");
-     } else {
-       // Pass data async to url => tweets
-        const input = $('#tweet-text').val();
-       $('#tweet-text').text(input);
 
+    $('.over-alert').slideUp(1000);
+    $('.empty-alert').slideUp(1000);
+
+    if($('#tweet-text').val().length <= 0) { 
+      $('.empty-alert').slideDown(1000);
+     } else if ($('#tweet-text').val().length > 140) {
+       $('.over-alert').slideDown(1000);
+     } else {
+      
+       // Pass data async to url => tweets
       $.ajax({
         url: '/tweets',
         method: "POST" ,
@@ -146,9 +147,8 @@ $(document).ready(function() {
         loadTweets()
       })
      }
-    $('#tweet-text').val('');
-    $('.counter').val(140);
-
+    // $('#tweet-text').val('');
+    // $('.counter').val(140);
   })
   
     
@@ -162,6 +162,8 @@ $(document).ready(function() {
       renderTweets(res)
       // $("#tweet-text").replaceWith(`<textarea name="text" id="tweet-text"></textarea>`)
     })
+    $('#tweet-text').val('');
+    $('.counter').val(140);
   }
 
 
