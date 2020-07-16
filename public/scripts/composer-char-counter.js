@@ -2,7 +2,7 @@ $(document).ready(function() {
   // --- our code goes here ---
   console.log("Scripts loaded!");
   
-  $('textarea').keydown(function () {
+  $("#tweet-text").keydown(function () {
     const value = $(this).val().length;
     const maxValue = 140;
     const counter = $(this).parent().find('.counter');
