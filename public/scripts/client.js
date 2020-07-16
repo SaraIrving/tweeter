@@ -44,9 +44,16 @@
 // ]
 
 $(document).ready(function() {
-
+  //This function evaluates the text inputted by the user and re-encodes the text so that any unsafe characters are converted into a safe 'encoded' representation
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+  
   const createTweetElement = function (tweetData) {
     //create the $tweet element
+    
     let $tweet = `
       <article class="tweet-article">
         <header class="tweet-header">
@@ -56,7 +63,7 @@ $(document).ready(function() {
           </div>
           <p class="hidden-handle">${tweetData["user"].handle}</p>
         </header>
-        <p class="text">${tweetData["content"].text}</p>
+        <p class="text">${escape(tweetData.content.text)}</p>
         <footer class="tweet-footer">
           <p>${tweetData["created_at"]}</p>
           <div class="icons">
@@ -68,6 +75,9 @@ $(document).ready(function() {
       </article>
       <br>
         `;
+
+       
+
     return $tweet;
   }
 
@@ -123,7 +133,10 @@ $(document).ready(function() {
        alert("Tweet is too long!");
      } else {
        // Pass data async to url => tweets
-       $.ajax({
+        const input = $('#tweet-text').val();
+       $('#tweet-text').text(input);
+
+      $.ajax({
         url: '/tweets',
         method: "POST" ,
         data: $(this).serialize(),
