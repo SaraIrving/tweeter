@@ -133,7 +133,10 @@ $(document).ready(function() {
         loadTweets()
       })
      }
-    })
+    $('#tweet-text').val('');
+    $('.counter').val(140);
+
+  })
   
     
   const loadTweets = function () {
@@ -144,7 +147,7 @@ $(document).ready(function() {
     .then ((res) => {
       $('.posted-tweet').empty();
       renderTweets(res)
-      $("#tweet-text").replaceWith(`<textarea name="text" id="tweet-text"></textarea>`)
+      // $("#tweet-text").replaceWith(`<textarea name="text" id="tweet-text"></textarea>`)
     })
   }
 
