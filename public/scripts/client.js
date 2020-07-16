@@ -117,18 +117,24 @@ $(document).ready(function() {
     event.preventDefault();
     // Prevent redirect
     
-    // Pass data async to url => tweets
-    $.ajax({
-      url: '/tweets',
-      method: "POST" ,
-      data: $(this).serialize(),
+    if($('#tweet-text').val().length <= 0) { 
+      alert("Tweet is empty!");
+     } else if ($('#tweet-text').val().length > 140) {
+       alert("Tweet is too long!");
+     } else {
+       // Pass data async to url => tweets
+       $.ajax({
+        url: '/tweets',
+        method: "POST" ,
+        data: $(this).serialize(),
+      })
+      .then ((res) => {
+        console.log("Success")
+        loadTweets()
+      })
+     }
     })
-    .then ((res) => {
-      console.log("Success")
-      loadTweets()
-    })
-      
-  })
+  
     
   const loadTweets = function () {
     $.ajax ({
