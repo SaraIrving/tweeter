@@ -12,6 +12,11 @@
   color: black;
 }
 
+.tweet-article:hover .icons {
+  display: block;
+  color: black;
+}
+
 .tweet-article:hover {
   box-shadow: 4px 4px lightslategray;
   filter: none;
@@ -20,6 +25,7 @@
 .text {
   border: none;
   border-bottom: 3px solid black;
+  word-wrap: break-word;
 }
 
 .tweet-article {
@@ -54,6 +60,7 @@
   width: 40px;
 }
 
-.icons {
-  
+.icons{ 
+  display: none;
 }
+
