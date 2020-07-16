@@ -79,7 +79,7 @@ $(document).ready(function() {
       let $createdTweet = createTweetElement(tweetObj);
       // console.log($createdTweet);
       //.posted-tweet is the class of the element that will contain these article elements 
-      $('.posted-tweet').append($createdTweet);
+      $('.posted-tweet').prepend($createdTweet);
     }
   }
 
@@ -144,6 +144,7 @@ $(document).ready(function() {
     .then ((res) => {
       $('.posted-tweet').empty();
       renderTweets(res)
+      $("#tweet-text").replaceWith(`<textarea name="text" id="tweet-text"></textarea>`)
     })
   }
 
@@ -151,14 +152,14 @@ $(document).ready(function() {
 
 //const $tweet = $(`<article class="tweet">Hello world</article>`);
 
-  const $tweet = createTweetElement(tweetData);
+  //const $tweet = createTweetElement(tweetData);
 
 // Test / driver code (temporary)
   // console.log($tweet); // to see what it looks like
 
-  $('.posted-tweet').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+  //$('.posted-tweet').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 
-  renderTweets(data);
+  //renderTweets(data);
 
 
 });
