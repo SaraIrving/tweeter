@@ -15,10 +15,6 @@ html {
  */
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   font-family: 'Source Sans Pro', sans-serif;
   color: #545149;
   background-color: #f4f1ec;
@@ -33,7 +29,30 @@ body {
  .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 90%;
+ }
+
+ .header, .stuff {
+   width: 100%;
+ }
+
+ @media only screen and (min-width: 1024px) {
+   
+   .container {
+    flex-direction: row;
+     margin-top: 120px;
+     width: 100%;
+   }
+
+   .header {
+     width: 45%;
+     margin-right: 5%;
+   }
+   .tweet-container {
+    width: 50%;
+   }
+
+
+
+   
  }
