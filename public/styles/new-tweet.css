@@ -16,8 +16,8 @@
 
 .bottom {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  
 }
 
 textarea {
@@ -44,7 +44,3 @@ textarea {
   font-weight: bold;
 
 }
-
-.red-color {
-  color:red;
-  }
