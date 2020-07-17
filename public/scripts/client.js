@@ -7,18 +7,15 @@
 
 
 $(document).ready(function() {
-
-  
-
   //This function evaluates the text inputted by the user and re-encodes the text so that any unsafe characters are converted into a safe 'encoded' representation
   const escape =  function(str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }
+  };
   
-  //this function creates the new $tweet element
-  const createTweetElement = function (tweetData) {
+  //This function creates the new $tweet element
+  const createTweetElement = function(tweetData) {
     
     let $tweet = `
       <article class="tweet-article">
@@ -42,67 +39,59 @@ $(document).ready(function() {
         </footer>
       </article>
         `;
-
-       
-
     return $tweet;
-  }
+  };
 
+  //This function renders the created tweet to the page and adds it to the top of the list of tweets displayed
   const renderTweets = function(tweets) {
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
     for (tweetObj of tweets) {
       let $createdTweet = createTweetElement(tweetObj);
-      // console.log($createdTweet);
-      //.posted-tweet is the class of the element that will contain these article elements 
+      //.posted-tweet is the class of the element that will contain these article elements
       $('.posted-tweet').prepend($createdTweet);
     }
-  }
+  };
 
   
+  //ajax POST request
+  //validates input to ensure it is not empty or more than 140 characters, if so, returns error message
   $('#tweet-form').submit(function(event){
     event.preventDefault();
-    // Prevent redirect
 
     $('.over-alert').slideUp(1000);
     $('.empty-alert').slideUp(1000);
 
-    if($('#tweet-text').val().length <= 0) { 
+    if ($('#tweet-text').val().length <= 0) {
       $('.empty-alert').slideDown(1000);
-     } else if ($('#tweet-text').val().length > 140) {
+    } else if ($('#tweet-text').val().length > 140) {
        $('.over-alert').slideDown(1000);
-     } else {
+    } else {
       
-       // Pass data async to url => tweets
+      // Pass data async to url => tweets
       $.ajax({
         url: '/tweets',
         method: "POST" ,
         data: $(this).serialize(),
       })
-      .then ((res) => {
-        console.log("Success")
-        loadTweets()
-      })
-     }
-    // $('#tweet-text').val('');
-    // $('.counter').val(140);
-  })
+        .then((res) => {
+          console.log("Success")
+          loadTweets()
+        })
+    }
+  });
   
-    
-  const loadTweets = function () {
-    $.ajax ({
+  //ajax GET request
+  //loads current collection of tweets onto the page
+  const loadTweets = function() {
+    $.ajax({
       url: '/tweets',
       method: "GET",
     })
-    .then ((res) => {
-      $('.posted-tweet').empty();
-      renderTweets(res)
-      // $("#tweet-text").replaceWith(`<textarea name="text" id="tweet-text"></textarea>`)
-    })
+      .then ((res) => {
+        $('.posted-tweet').empty();
+        renderTweets(res);
+      })
     $('#tweet-text').val('');
     $('.counter').val(140);
-  }
-
+  };
 
 });
