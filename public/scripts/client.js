@@ -7,6 +7,9 @@
 
 
 $(document).ready(function() {
+
+  
+
   //This function evaluates the text inputted by the user and re-encodes the text so that any unsafe characters are converted into a safe 'encoded' representation
   const escape =  function(str) {
     let div = document.createElement('div');
@@ -14,8 +17,8 @@ $(document).ready(function() {
     return div.innerHTML;
   }
   
+  //this function creates the new $tweet element
   const createTweetElement = function (tweetData) {
-    //create the $tweet element
     
     let $tweet = `
       <article class="tweet-article">
@@ -28,7 +31,7 @@ $(document).ready(function() {
         </header>
         <p class="text">${escape(tweetData.content.text)}</p>
         <footer class="tweet-footer">
-          <p>${tweetData["created_at"]}</p>
+          <p>${moment(tweetData.created_at).fromNow()}</p>
           <div class="icons">
             <i class="fa fa-flag" aria-hidden="true"></i>
             <i class="fa fa-retweet" aria-hidden="true"></i>
