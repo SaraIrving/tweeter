@@ -3,14 +3,7 @@
   width: auto;
 }
 
-.hidden-handle {
-  display: none;
-}
 
-.tweet-article:hover .hidden-handle {
-  display: block;
-  color: black;
-}
 
 .tweet-article:hover .icons {
   display: block;
