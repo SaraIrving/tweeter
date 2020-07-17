@@ -29,7 +29,7 @@ $(document).ready(function() {
           </div>
           <p>${tweetData["user"].handle}</p>
         </header>
-        <p class="text">${escape(tweetData.content.text)}</p>
+        <body class="text">${escape(tweetData.content.text)}</body>
         <footer class="tweet-footer">
           <p>${moment(tweetData.created_at).fromNow()}</p>
           <div class="icons">
