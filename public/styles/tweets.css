@@ -27,6 +27,9 @@
   border: none;
   border-bottom: 3px solid black;
   word-wrap: break-word;
+}
+
+.text-body {
   overflow-x: auto;
 }
 
