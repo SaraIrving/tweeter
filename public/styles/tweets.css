@@ -19,6 +19,7 @@
   border: none;
   border-bottom: 3px solid black;
   word-wrap: break-word;
+  overflow-x: auto;
 }
 
 .tweet-article {
