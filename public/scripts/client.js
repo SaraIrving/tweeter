@@ -27,7 +27,7 @@ $(document).ready(function() {
             <img class="small-avatar" src="${tweetData["user"].avatars}"> 
             <p>${tweetData["user"].name}</p>
           </div>
-          <p class="hidden-handle">${tweetData["user"].handle}</p>
+          <p>${tweetData["user"].handle}</p>
         </header>
         <p class="text">${escape(tweetData.content.text)}</p>
         <footer class="tweet-footer">
