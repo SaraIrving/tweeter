@@ -1,8 +1,5 @@
 
-.tweeter.logo {
-  font-family: 'Bungee', sans-serif;
-}
-
+/*Styling for nav element which contains logo and button*/
 .nav-bar {
   position: fixed;
   display: flex;
@@ -17,6 +14,12 @@
   z-index: 1000;
 }
 
+/* Styling for logo*/
+.tweeter.logo {
+  font-family: 'Bungee', sans-serif;
+}
+
+/* Styling for button*/
 .btn {
   font-family: 'Bungee', sans-serif;
   background-color: aqua;
