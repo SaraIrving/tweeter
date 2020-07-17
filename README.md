@@ -6,11 +6,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-!["Screenshot of layout for devices with smaller screens"] (https://raw.githubusercontent.com/SaraIrving/tweeter/master/docs/narrowScreen.png)
+!["Screenshot of layout for devices with smaller screens"](https://raw.githubusercontent.com/SaraIrving/tweeter/master/docs/narrowScreen.png)
 
-!["Screenshot of layout for devices with minimum width of 1024px"] (https://raw.githubusercontent.com/SaraIrving/tweeter/master/docs/largeScreen.png)
+!["Screenshot of layout for devices with minimum width of 1024px"](https://raw.githubusercontent.com/SaraIrving/tweeter/master/docs/largeScreen.png)
 
-!["Screenshot of error message shown when user is trying to submit an empty tweet"] (https://raw.githubusercontent.com/SaraIrving/tweeter/master/docs/emptyTweetError.png)
+!["Screenshot of error message shown when user is trying to submit an empty tweet"](https://raw.githubusercontent.com/SaraIrving/tweeter/master/docs/emptyTweetError.png)
 
 ## Getting Started
 
