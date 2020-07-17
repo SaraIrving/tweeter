@@ -1,43 +1,48 @@
+
+/*Styling for the main element*/
+.container {
+  padding: 1.5em;
+}
+
+/*Styling for the form element which holds the textarea, button and counter*/
 .tweet-form {
   margin-bottom: 15px;
 }
 
+/* styling for the tweet button*/
 .tweet.button {
   font-family: 'Bungee', sans-serif;
   background-color: #4056A1;
   color: #FFFFFF;
 }
 
+/*styling for the tweet counter*/
 .counter{
   font-family: 'Bungee', sans-serif;
-  color: black;
-  
+  color: black; 
 }
 
-.container {
-  padding: 1.5em;
-}
-
+/*styling for the div that contains the button and the counter*/
 .bottom {
   display: flex;
   justify-content: space-between;
-  
 }
 
-textarea {
+/*Styling for the tweet text that will be displayed*/
+#tweet-text {
   background-color: transparent;
   border: none;
   border-bottom: 3px solid black;
   width: 100%;
 }
 
+/* Styling for the alerts when a tweet it empty or too long*/
 .over-alert {
   display: none;
   border: 2px solid red;
   padding: 15px;
   color: red;
   font-weight: bold;
-
 }
 
 .empty-alert {
@@ -46,5 +51,4 @@ textarea {
   padding: 15px;
   color: red;
   font-weight: bold;
-
 }
