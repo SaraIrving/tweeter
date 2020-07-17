@@ -28,28 +28,35 @@ html {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */ 
 
+ /*Styling for main element*/
  .container {
   display: flex;
   flex-direction: column;
   width: 90%;
  }
 
- .header, .stuff {
+ /*Styling for header element and the div that contains the new tweet box and created tweets*/
+ .header, .tweet-container {
    width: 100%;
  }
 
+ /*Styling for media query for larger screens*/
  @media only screen and (min-width: 1024px) {
    
+  /*Styling for main element*/
    .container {
     flex-direction: row;
      margin-top: 120px;
      width: 100%;
    }
 
+   /*Styling for header element within the main*/
    .header {
      width: 45%;
      margin-right: 5%;
    }
+
+   /*Styling for the div that contains the new and created tweets*/
    .tweet-container {
     width: 50%;
    }
