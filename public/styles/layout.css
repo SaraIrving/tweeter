@@ -14,7 +14,7 @@ html {
  * Global layout stuff
  */
 
-body {
+.new-tweet-body {
   display: flex;
   justify-content: center;
   font-family: 'Source Sans Pro', sans-serif;
