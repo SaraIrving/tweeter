@@ -5,6 +5,8 @@
 
 .nav-bar {
   position: fixed;
+  display: flex;
+  justify-content: space-between;
   top: 0;
   height: 120px;
   width: 100%;
@@ -14,3 +16,8 @@
   z-index: 1000;
 }
 
+.btn {
+  font-family: 'Bungee', sans-serif;
+  background-color: aqua;
+  color: #FFFFFF;
+}
